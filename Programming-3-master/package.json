@@ -1,0 +1,26 @@
+{
+  "name": "Programming-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start":"node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NG1m8/Programming-3"
+  },
+  "author": "hanuman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hanumanum/test-heroku-gol/issues"
+  },
+  "homepage": "https://tumotestgol.herokuapp.com/",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "engines": {
+    "node": "4.7.2"
+  }
+}
