@@ -1,7 +1,24 @@
 var grassArr = [];
 var season = prompt("Write any season");
+var seasonText = document.getElementById("season")
+
+season = season.toLocaleLowerCase()
 var c = 0;
-var z;
+if(season=="spring"){
+    z=0;
+}
+else if(season=="summer"){
+    z=100;
+}
+else if(season=="winter"){
+    z=150;
+}
+else if(season=="fall" || season=="autumn"){
+    z=50;
+}
+else{
+    z=0;
+}
 var side = 15;
 var matrix = [
     // [1, 0, 1, 0, 1],
@@ -18,7 +35,7 @@ var vorsord = [];
 var mahh = [];
 function setup() {
 
-    frameRate(1);
+    frameRate(10);
     createCanvas(matrix[0].length * side, matrix.length * side);
     background('#acacac');
     for (var y = 0; y < matrix.length; ++y) {
@@ -52,27 +69,35 @@ function draw() {
     z++;
     if (z >= 0 && z < 50) {
         season = "spring";
-        if (season == "spring" && grassArr.length == 0) {
+        seasonText.innerHTML = "spring"
+        
+        /*if (season == "spring" && grassArr.length == 0) {
             var a = Math.floor(Math.random() * g);
             var b = Math.floor(Math.random() * h);
             var gr = new Grass(a, b, 1);
             grassArr.push(gr);
-        }
+        }*/
     }
     else if (z >= 50 && z < 100) {
         season = "autumn"
+        seasonText.innerHTML = "autumn"
     }
     else if (z >= 100 && z < 150) {
         season = "summer"
+        seasonText.innerHTML = "summer"
     }
     else if (z >= 150 && z <= 200) {
         season = "winter"
+        seasonText.innerHTML = "winter"
         if (z == 200) {
             z = 0
         }
+        
     }
+    console.log(z);
 
-    if (season == "winter" || season == "Winter") {
+    if (season == "winter") {
+        console.log(season)
         for (var y = 0; y < matrix.length; y++) {
 
             for (var x = 0; x < matrix[y].length; x++) {
@@ -103,7 +128,8 @@ function draw() {
             }
         }
     }
-    else if (season == "spring" || season == "Spring" || season == "Summer" || season == "summer") {
+    else if (season == "spring" ) {
+        console.log(season)
         for (var y = 0; y < matrix.length; y++) {
 
             for (var x = 0; x < matrix[y].length; x++) {
@@ -134,7 +160,40 @@ function draw() {
             }
         }
     }
-    else if (season == "Autumn" || season == "Autumn" || season == "Fall" || season == "fall") {
+    else if (season == "summer") {
+        console.log(season)
+        for (var y = 0; y < matrix.length; y++) {
+
+            for (var x = 0; x < matrix[y].length; x++) {
+                if (matrix[y][x] == 1) {
+                    fill("green");
+                    rect(x * side, y * side, side, side);
+                }
+                else if (matrix[y][x] == 0) {
+                    fill("#acacac");
+                    rect(x * side, y * side, side, side);
+                }
+                else if (matrix[y][x] == 2) {
+                    fill("yellow");
+                    rect(x * side, y * side, side, side);
+                }
+                else if (matrix[y][x] == 3) {
+                    fill("red");
+                    rect(x * side, y * side, side, side);
+                }
+                else if (matrix[y][x] == 4) {
+                    fill("brown");
+                    rect(x * side, y * side, side, side);
+                }
+                else if (matrix[y][x] == 5) {
+                    fill("black");
+                    rect(x * side, y * side, side, side);
+                }
+            }
+        }
+    }
+    else if (season == "autumn" || season == "fall") {
+        console.log(season)
         for (var y = 0; y < matrix.length; y++) {
 
             for (var x = 0; x < matrix[y].length; x++) {

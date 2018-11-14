@@ -123,7 +123,7 @@ class Vorsord extends KendaniEak {
     this.stanalNorKordinatner();
     var datarkvandakner = this.yntrelVandak(3);
     var norvandak = random(datarkvandakner);
-    console.log(norvandak);
+   
     if (norvandak) {
       matrix[this.y][this.x] = 0;
       matrix[norvandak[1]][norvandak[0]] = 4;
