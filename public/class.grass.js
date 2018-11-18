@@ -11,5 +11,11 @@ class Grass extends KendaniEak {
             matrix[this.direction[1]][this.direction[0]] = this.index;
             this.multiply = 0;
         }
+        else if(season="winter"){
+            
+            this.energy=0; 
+            
+        }
     }
+    
 }

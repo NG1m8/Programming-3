@@ -147,7 +147,7 @@ class Mah extends KendaniEak {
   }
 
   bazmanal() {
-    this.energy = 4;
+    this.energy = 10;
     var norVandak = random(this.yntrelVandak(0));
     if (norVandak) {
       var mah = new Mah(norVandak[0], norVandak[1]);

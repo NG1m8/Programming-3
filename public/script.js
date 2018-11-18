@@ -1,7 +1,24 @@
 var grassArr = [];
 var season = prompt("Write any season");
 var seasonText = document.getElementById("season")
-
+ var a=0;
+ function framerate(){
+    if(z >= 0 && z < 50){
+        a=30;
+    }
+    else if(z >= 50 && z < 100){
+        a=2;
+    }
+    else if(z >= 100 && z < 150){
+        a=40;
+    }
+    else if(z >= 150 && z <= 200){
+        a=1;
+    }
+    else{
+        a=40;
+    }
+ }
 season = season.toLocaleLowerCase()
 var c = 0;
 if(season=="spring"){
@@ -35,7 +52,7 @@ var vorsord = [];
 var mahh = [];
 function setup() {
 
-    frameRate(10);
+   
     createCanvas(matrix[0].length * side, matrix.length * side);
     background('#acacac');
     for (var y = 0; y < matrix.length; ++y) {
@@ -65,11 +82,13 @@ function setup() {
 }
 
 function draw() {
+    framerate();
+    frameRate(a);
     
     z++;
     if (z >= 0 && z < 50) {
         season = "spring";
-        seasonText.innerHTML = "spring"
+        seasonText.innerHTML = "Spring"
         
         /*if (season == "spring" && grassArr.length == 0) {
             var a = Math.floor(Math.random() * g);
@@ -80,24 +99,24 @@ function draw() {
     }
     else if (z >= 50 && z < 100) {
         season = "autumn"
-        seasonText.innerHTML = "autumn"
+        seasonText.innerHTML = "Fall"
     }
     else if (z >= 100 && z < 150) {
         season = "summer"
-        seasonText.innerHTML = "summer"
+        seasonText.innerHTML = "Summer"
     }
     else if (z >= 150 && z <= 200) {
         season = "winter"
-        seasonText.innerHTML = "winter"
+        seasonText.innerHTML = "Winter"
         if (z == 200) {
             z = 0
         }
         
     }
-    console.log(z);
+    
 
     if (season == "winter") {
-        console.log(season)
+       
         for (var y = 0; y < matrix.length; y++) {
 
             for (var x = 0; x < matrix[y].length; x++) {
@@ -127,9 +146,10 @@ function draw() {
                 }
             }
         }
+     
     }
     else if (season == "spring" ) {
-        console.log(season)
+        
         for (var y = 0; y < matrix.length; y++) {
 
             for (var x = 0; x < matrix[y].length; x++) {
@@ -161,7 +181,7 @@ function draw() {
         }
     }
     else if (season == "summer") {
-        console.log(season)
+       
         for (var y = 0; y < matrix.length; y++) {
 
             for (var x = 0; x < matrix[y].length; x++) {
@@ -193,7 +213,7 @@ function draw() {
         }
     }
     else if (season == "autumn" || season == "fall") {
-        console.log(season)
+       
         for (var y = 0; y < matrix.length; y++) {
 
             for (var x = 0; x < matrix[y].length; x++) {

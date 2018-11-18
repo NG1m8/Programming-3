@@ -146,7 +146,7 @@ class Gishatich extends KendaniEak {
   }
 
   bazmanal() {
-    this.energy = 50;
+    this.energy = 25;
     var norVandak = random(this.yntrelVandak(0));
     if (norVandak) {
       var gishatich = new Gishatich(norVandak[0], norVandak[1]);
@@ -156,7 +156,7 @@ class Gishatich extends KendaniEak {
   }
   mahanal(i) {
     matrix[this.y][this.x] = 0;
-    if (this.energy = 0.5) { gishatichner.splice(i, 1); }
+    if (this.energy = 1) { gishatichner.splice(i, 1); }
 
 
   }
