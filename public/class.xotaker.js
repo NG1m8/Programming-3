@@ -144,7 +144,7 @@ class Xotaker extends KendaniEak {
             this.sharjvel();
         }
     }
-
+  
     bazmanal() {
         this.energy = 4;
         var norVandak = random(this.yntrelVandak(0));
